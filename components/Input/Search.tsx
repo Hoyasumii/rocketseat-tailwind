@@ -13,14 +13,14 @@ function onBlur(setState: React.Dispatch<React.SetStateAction<boolean>>) {
   setState(false);
 }
 
-export function Search({ placeholder = "Search", ...props }: Props) {
+export function Search({ className, placeholder = "Search", ...props }: Props) {
   const [active, setActive] = useState<boolean>(false);
 
   return (
     <div
-      className={`flex w-full items-center gap-2 rounded-lg border ${
+      className={`flex items-center gap-2 rounded-lg border ${
         active ? "border-sky-600" : "border-zinc-300"
-      } px-3 py-2 shadow-sm transition-all duration-300`}
+      } px-3 py-2 shadow-sm transition-all duration-300 ${className}`}
     >
       <LucideSearch className="h-5 w-5 text-zinc-500" />
       <input
