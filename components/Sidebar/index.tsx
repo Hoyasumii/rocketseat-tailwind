@@ -8,6 +8,7 @@ import {
   Flag,
   Home,
   LifeBuoy,
+  LucideSearch,
   SquareStack,
   Users,
 } from "lucide-react";
@@ -18,7 +19,12 @@ export function Sidebar() {
   return (
     <aside className="border-r border-zinc-200 px-5 py-8 flex flex-col gap-6">
       <Logo className="mx-1" />
-      <Input.Search className="mx-1" />
+      <Input.Root className="mx-1">
+        <Input.Preffix>
+          <LucideSearch className="h-5 w-5 text-zinc-500" />
+        </Input.Preffix>
+        <Input.Control placeholder="Search" />
+      </Input.Root>
 
       <nav className="space-y-0.5">
         <NavItem title={"Home"} icon={Home} />
