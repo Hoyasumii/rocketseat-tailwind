@@ -1,3 +1,10 @@
+import { Tabs } from "@/components";
+
 export default function Home() {
-  return <>Hello World</>;
+  return (
+    <>
+      <h1 className="text-3xl font-medium text-zinc-900">Settings</h1>
+      <Tabs />
+    </>
+  );
 }

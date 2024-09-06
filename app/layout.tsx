@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="antialiased">
       <body className={`${InterFont.className} min-h-svh grid grid-cols-app`}>
         <Sidebar />
         <main className="px-4 pb-12 pt-8">{children}</main>
