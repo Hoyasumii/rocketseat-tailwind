@@ -5,18 +5,16 @@ import { ChevronDown } from "lucide-react";
 import { ReactNode } from "react";
 import { Item } from "./Item";
 
-interface SelectProps {
+interface SelectProps extends SelectPrimitive.SelectProps {
   children: ReactNode;
   placeholder: string;
 }
 
-function Select({ children, placeholder }: SelectProps) {
+function Select({ children, placeholder, ...props }: SelectProps) {
   return (
-    <SelectPrimitive.Root>
+    <SelectPrimitive.Root {...props}>
       <SelectPrimitive.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600 data-[state=open]:rounded-b-none data-[state=open]:border-b-0 outline-none">
-        <SelectPrimitive.Value
-          placeholder={placeholder}
-        />
+        <SelectPrimitive.Value placeholder={placeholder} />
         <SelectPrimitive.Icon>
           <ChevronDown className="h-5 w-5 text-zinc-500" />
         </SelectPrimitive.Icon>
@@ -26,7 +24,7 @@ function Select({ children, placeholder }: SelectProps) {
         <SelectPrimitive.Content
           side="bottom"
           position="popper"
-          className="z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-300 bg-white data-[state=open]:border-t-0 data-[state=open]:rounded-t-none"
+          className="z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-300 bg-white data-[state=open]:border-t-0 data-[state=open]:rounded-t-none shadow"
         >
           <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>
