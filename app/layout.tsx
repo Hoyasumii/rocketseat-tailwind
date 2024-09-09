@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="antialiased">
-      <body className={`${InterFont.className} min-h-svh grid grid-cols-app`}>
+      <body
+        className={`${InterFont.className} min-h-svh relative grid grid-cols-app`}
+      >
         <Sidebar />
         <main className="px-8 pb-12 pt-8">{children}</main>
       </body>

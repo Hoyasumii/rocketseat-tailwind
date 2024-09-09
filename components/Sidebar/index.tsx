@@ -17,7 +17,7 @@ import { Profile } from "./Profile";
 
 export function Sidebar() {
   return (
-    <aside className="border-r border-zinc-200 px-5 py-8 flex flex-col gap-6">
+    <aside className="h-svh sticky top-0 left-0 border-r border-zinc-200 px-5 py-8 flex flex-col gap-6">
       <Logo className="mx-1" />
       <Input.Root className="mx-1">
         <Input.Preffix>
