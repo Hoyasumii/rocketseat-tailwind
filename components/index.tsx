@@ -1,5 +1,5 @@
 export { Sidebar } from "./Sidebar";
 export { default as Svg } from "./Svg";
-export * as Input from "./Input";
+export { default as Input } from "./Input";
 export { Progress } from "./Progress";
-export {Tabs} from './Tabs';
+export { Tabs } from "./Tabs";
