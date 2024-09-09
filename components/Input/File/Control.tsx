@@ -5,8 +5,8 @@ import { useFileInput } from "./Root";
 
 export type ControlProps = ComponentProps<"input">;
 
-export function Control(props: ControlProps) {
-  const { id, onFilesSelected } = useFileInput();
+export function Control({ multiple, ...props }: ControlProps) {
+  const { id, onFilesSelected, files: hookFiles } = useFileInput();
 
   function handleFilesSelected(event: ChangeEvent<HTMLInputElement>) {
     if (!event.target.files?.length) {
@@ -15,6 +15,10 @@ export function Control(props: ControlProps) {
 
     const files = Array.from(event.target.files);
 
+    if (multiple) {
+      onFilesSelected(files.concat(hookFiles));
+      return;
+    }
     onFilesSelected(files);
   }
 
@@ -24,6 +28,7 @@ export function Control(props: ControlProps) {
       className="sr-only"
       id={id}
       onChange={handleFilesSelected}
+      multiple={multiple}
       {...props}
     />
   );

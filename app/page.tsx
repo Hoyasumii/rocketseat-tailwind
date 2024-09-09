@@ -137,8 +137,9 @@ export default function Home() {
             </span>
           </label>
           <Input.File.Root>
-            <Input.File.Trigger htmlFor="work" />
-            <Input.File.Control name="work" id="work" multiple />
+            <Input.File.Trigger />
+            <Input.File.Control multiple />
+            <Input.File.FileList />
           </Input.File.Root>
         </div>
 
