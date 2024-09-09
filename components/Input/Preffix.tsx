@@ -4,7 +4,7 @@ type Props = ComponentProps<"div">;
 
 export function Preffix({ className, children, ...props }: Props) {
   return (
-    <div className={`${children}`} {...props}>
+    <div className={`${className}`} {...props}>
       {children}
     </div>
   );
