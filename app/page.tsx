@@ -1,4 +1,6 @@
-import { Input, Tabs } from "@/components";
+"use client";
+
+import { Input, Tabs, Select } from "@/components";
 import { Mail } from "lucide-react";
 
 export default function Home() {
@@ -103,7 +105,10 @@ export default function Home() {
           >
             Country
           </label>
-          <div />
+          <Select.Root placeholder="Select a country...">
+            <Select.Item value="br" text="Brazil" />
+            <Select.Item value="us" text="United States" />
+          </Select.Root>
         </div>
 
         <div className="grid grid-cols-form gap-3 pt-5">
@@ -113,7 +118,13 @@ export default function Home() {
           >
             Timezone
           </label>
-          <div />
+          <Select.Root placeholder="Select a timezone...">
+            <Select.Item
+              value="utc8"
+              text="Pacific Standard Time (UTC-08:00)"
+            />
+            <Select.Item value="utc3" text="America São Paulo (UTC-03:00)" />
+          </Select.Root>
         </div>
 
         <div className="grid grid-cols-form gap-3 pt-5">
